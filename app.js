@@ -6,12 +6,20 @@ function isPrime(num) {
   if (num < 2) return false; 
   for (let i = 2; i <= Math.sqrt(num); i++) {
     if (num % i === 0) {
-      return false;
+      return false; 
     }
   }
   return true;
 }
 
-const primeNumbers = numbers.filter(isPrime);
+const primeArray = numbers.filter(isPrime);
 
-console.log("Prime Numbers:", primeNumbers);
+const maxPrime = Math.max(...primeArray);
+const minPrime = Math.min(...primeArray);
+
+const sumOfPrimes = primeArray.reduce((sum, num) => sum + num, 0);
+
+console.log("Prime Numbers:", primeArray);
+console.log("Maximum Prime:", maxPrime);
+console.log("Minimum Prime:", minPrime);
+console.log("Sum of Primes:", sumOfPrimes);
